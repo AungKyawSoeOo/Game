@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendor/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+</head>
+<body>
+<marquee behavior="" scrollamount="20"><h1 align="center" >Here are the lists of Sport games</h1></marquee>
+
+<center><img src="{% static 'sports.jpg' %}"  alt="khk" class="rounded"></center>
+<br>
+<center><h1>Genre : Sport </h1></center>
+<br>
+<div class="container">
+
+    <div class="row">
+         {% for a in sport.all %}
+
+        <div class="col-md-3">
+            <a href="{% url 'sportdetail' a.id%}">
+                <img class="img-fluid" src="{{ a.img1.url }}" alt="Card image" style="height:200px">
+                     <p align="center">{{a.t1}}</p>
+        </a>
+
+
+
+        </div>
+
+    {% endfor %}
+    </div>
+</div>
+<!--<div class="row">-->
+<!--     {% for job in power.all %}-->
+<!--<div class="col-md-3"></div>-->
+<!--{% endfor %}-->
+<!--</div>-->
+<a  class="btn-outline-danger" href="{% url 'home' %}"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+</div>
+
+
+
+
+<script src="{% static 'js/popper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+	<script src="{% static 'vendor/js/tether.min.js' %}"></script>
+
+	<script src="{% static 'vendor/js/jquery.slim.js' %}"> </script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>
